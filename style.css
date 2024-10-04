@@ -1,0 +1,95 @@
+/* General Styling */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form Section */
+  .form-section {
+    width: 400px;
+    padding: 40px;
+    p{
+      margin-left: 50px;
+    }
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 30px;
+
+
+  }
+
+.image-section{
+  img{
+    
+    width: 350px;
+    height: 600px;
+    margin-right:  px;
+   
+    border-radius: 30px;
+  }
+}
+
+.password-requirements{
+  list-style-type: none;
+  font-size: 12px;
+}
+
+.social-login .button1{
+
+
+
+
+
+  button{
+    height: 40px;
+    width: 100px;
+    border-radius: 30px;
+    border: none;
+    background-color: rgb(89, 83, 154);
+    margin-left: 130px;
+    margin-top: 50px;
+    color: rgb(255, 255, 255);
+  
+  }
+  button:hover{
+    background-color: rgb(44, 34, 179);
+  }
+}
+
+  
+  
+
+ 
+
