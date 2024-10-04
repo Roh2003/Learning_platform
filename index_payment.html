@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment UI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div id="paymentApp" class="bg-white w-30 h-30 p-6 rounded-lg shadow-md">
+        <!-- Step Indicator -->
+        <div class="flex justify-between items-center mb-9">
+            <div class="flex items-center space-x-6">
+                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white  ">1</div>
+                <span class="font-medium ml-4">Overview</span>
+            </div>
+            <div class="w-full h-1 bg-gray-300"></div>
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-gray-600">2</div>
+                <span class="font-medium">Payment Method</span>
+            </div>
+            <div class="w-full h-1 bg-gray-300"></div>
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-gray-600">3</div>
+                <span class="font-medium">Confirmation</span>
+            </div>
+        </div>
+
+        <!-- Step Content -->
+        <div id="stepContent">
+            <!-- Overview Section -->
+            <div id="overviewStep" class="space-y-4">
+                <h2 class="text-xl font-semibold">Overview</h2>
+                <p><strong>Course:</strong> Mobile App UI UX</p>
+                <p><strong>Lessons:</strong> 100+ Lessons</p>
+                <p><strong>Duration:</strong> 7 Weeks</p>
+                <p><strong>Trainer:</strong> Mumair</p>
+                <p><strong>Price:</strong> <span class="text-blue-500">$95</span> <span class="text-green-500">20% off</span></p>
+                <button onclick="nextStep()" class="w-full py-2 mt-4 bg-blue-500 text-white rounded-md">Continue</button>
+            </div>
+
+            <!-- Payment Method Section -->
+            <div id="paymentMethodStep" class="hidden space-y-4">
+                <h2 class="text-xl font-semibold">Select Payment Method</h2>
+
+                <!-- Payment Method Options -->
+                <div>
+                    <label class="block bg-gray-100 p-2 rounded-lg mb-2 cursor-pointer">
+                        <input type="radio" name="paymentMethod" value="Credit Card" onclick="showPaymentForm('creditCardForm')">
+                        Credit Card
+                    </label>
+                    <label class="block bg-gray-100 p-2 rounded-lg mb-2 cursor-pointer">
+                        <input type="radio" name="paymentMethod" value="UPI" onclick="showPaymentForm('upiForm')">
+                        UPI
+                    </label>
+                    <label class="block bg-gray-100 p-2 rounded-lg mb-2 cursor-pointer">
+                        <input type="radio" name="paymentMethod" value="PayPal" onclick="showPaymentForm('paypalForm')">
+                        PayPal
+                    </label>
+                    <label class="block bg-gray-100 p-2 rounded-lg mb-2 cursor-pointer">
+                        <input type="radio" name="paymentMethod" value="QR Code" onclick="showPaymentForm('qrForm')">
+                        QR Code
+                    </label>
+                </div>
+
+                <!-- Payment Forms -->
+                <div id="creditCardForm" class="hidden space-y-4">
+                    <input type="text" placeholder="Card Number" class="w-full p-2 border border-gray-300 rounded-md">
+                    <input type="text" placeholder="CVV" class="w-full p-2 border border-gray-300 rounded-md">
+                    <input type="text" placeholder="Expiry Date" class="w-full p-2 border border-gray-300 rounded-md">
+                </div>
+                
+                <div id="upiForm" class="hidden space-y-4">
+                    <input type="text" placeholder="UPI ID" class="w-full p-2 border border-gray-300 rounded-md">
+                </div>
+                
+                <div id="paypalForm" class="hidden space-y-4">
+                    <input type="email" placeholder="PayPal Email" class="w-full p-2 border border-gray-300 rounded-md">
+                </div>
+                
+                <div id="qrForm" class="hidden text-center space-y-4">
+                    <p>Scan the QR code with your payment app</p>
+                    
+                    <div class=" bg-gray-300 mx-auto" style="height: 300px; width: 300px;">
+                        <img src="qr.jpg" alt="qr_code">
+                    </div> <!-- Placeholder for QR Code -->
+                </div>
+
+                <button onclick="nextStep()" class="w-full py-2 mt-4 bg-blue-500 text-white rounded-md">Continue</button>
+            </div>
+
+            <!-- Confirmation Section -->
+            <div id="confirmationStep" class="hidden text-center">
+                <h2 class="text-2xl font-semibold mb-4">Transaction Completed</h2>
+                <div class=" bg-gray-300 mx-auto" style="height: 300px; width: 300px;">
+                    <img src="13429923.jpg" alt="qr_code">
+                </div> <!-- Placeholder for QR Code -->
+
+                <button onclick="restart()" class="w-full py-2 mt-4 bg-blue-500 text-white rounded-md">Continue to Learn</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
